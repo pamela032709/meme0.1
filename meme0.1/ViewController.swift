@@ -11,44 +11,59 @@ import UIKit
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
+    
+    @IBOutlet weak var TopTextLabel: UILabel!
+    
+    @IBOutlet weak var BottonTextLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
-    {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imagePickerView.image = image
-            dismissViewControllerAnimated(true, completion: nil)
-        }
+    override func viewWillAppear(animated:true,completion:, nil ) {
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+    }
+
     
-    @IBAction func picker(sender: AnyObject) {
-        
-        var imagePick=UIImagePickerController()
-        
-        imagePick.delegate = self
-        imagePick.sourceType = .PhotoLibrary
-        self.presentViewController(imagePick, animated: true, completion: nil)
-        
-        
+    //retrieve images
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+           // imageViewController.image = image
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-   
+    }
+ 
   
-        let imagePicker = UIImagePickerController()
+    //will retrieve the images from an album
+    
+    @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
+    let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
+      self.dismissViewControllerAnimated(true, completion: nil)
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     
     }
     
     
-    @IBAction func pickAnImageFromCamera (sender: AnyObject) {
+   //method will get pics from the camera directly 
+    
+    @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+
     
     }
-}
+
+    
+    
+    
+        }
+   
+
+
 
