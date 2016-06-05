@@ -19,53 +19,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-sf-JdG">
-                                <rect key="frame" x="2" y="548" width="515" height="44"/>
+                                <rect key="frame" x="0.0" y="560" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="A89-Dw-ViI"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="pick" id="WAG-Ab-nZ9">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="f7V-tz-irA"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="k8P-oT-PJG"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="w31-ms-gJc">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mTf-qS-ZF4">
                                             <rect key="frame" x="62" y="7" width="178" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="camera "/>
+                                            <state key="normal" title="cameraButton"/>
                                         </button>
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="cSj-d6-3m2"/>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="GHU-uK-YBc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-7m-Igp">
-                                <rect key="frame" x="232" y="192" width="240" height="151"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-7m-Igp">
+                                <rect key="frame" x="0.0" y="0.0" width="596" height="556"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m3-ha-20F">
-                                <rect key="frame" x="331" y="127" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopTextLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m3-ha-20F">
+                                <rect key="frame" x="0.0" y="28" width="596" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0Uv-MC-n8k"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke0-zu-qYi">
-                                <rect key="frame" x="286" y="445" width="133" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bottomTextField" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke0-zu-qYi">
+                                <rect key="frame" x="0.0" y="539" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="z2X-n3-fyD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xpm-sf-JdG" secondAttribute="trailing" constant="-16" id="Hzy-kU-wyC"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xpm-sf-JdG" secondAttribute="bottom" id="IcL-d8-dgM"/>
-                            <constraint firstItem="xpm-sf-JdG" firstAttribute="top" secondItem="Ny8-7m-Igp" secondAttribute="bottom" constant="140" id="ULM-uY-cP5"/>
-                            <constraint firstItem="xpm-sf-JdG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="e6B-Vg-NeS"/>
+                            <constraint firstItem="5m3-ha-20F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="0XJ-Ja-m5p"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xpm-sf-JdG" secondAttribute="bottom" id="1QK-i4-7Oz"/>
+                            <constraint firstItem="xpm-sf-JdG" firstAttribute="top" secondItem="Ny8-7m-Igp" secondAttribute="bottom" id="3Fr-IV-Hkk"/>
+                            <constraint firstItem="Ke0-zu-qYi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="DOt-V1-8OT"/>
+                            <constraint firstItem="xpm-sf-JdG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Lce-ZL-a6n"/>
+                            <constraint firstItem="Ke0-zu-qYi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LrP-kT-bTH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ke0-zu-qYi" secondAttribute="trailing" constant="-20" id="MjK-GG-YDE"/>
+                            <constraint firstItem="Ny8-7m-Igp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="NUj-D5-sM1"/>
+                            <constraint firstItem="5m3-ha-20F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tdk-YA-KCi"/>
+                            <constraint firstItem="5m3-ha-20F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="YiH-Wx-sNz"/>
+                            <constraint firstItem="Ny8-7m-Igp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hmW-SG-1Vi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xpm-sf-JdG" secondAttribute="trailing" constant="-20" id="in9-6R-Ypy"/>
+                            <constraint firstItem="xpm-sf-JdG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kon-KD-1I9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ke0-zu-qYi" secondAttribute="bottom" constant="40" id="ozZ-fO-VXE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5m3-ha-20F" secondAttribute="trailing" constant="-16" id="qYp-Un-Xbj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ny8-7m-Igp" secondAttribute="trailing" constant="-16" id="uV2-RH-irE"/>
+                            <constraint firstItem="Ny8-7m-Igp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yBM-aX-oqn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BottonTextLabel" destination="Ke0-zu-qYi" id="A49-Ha-8QL"/>
                         <outlet property="PickAnImageFromCamera" destination="w31-ms-gJc" id="VAE-Lq-OqY"/>
+                        <outlet property="TopTextLabel" destination="5m3-ha-20F" id="2e3-AI-T1u"/>
                         <outlet property="imagePickerView" destination="Ny8-7m-Igp" id="7DM-3D-se8"/>
-                        <outlet property="pickAnImage" destination="Ny8-7m-Igp" id="mDj-pF-WPH"/>
+                        <outlet property="pickAnImage" destination="xpm-sf-JdG" id="kN6-3J-NHN"/>
                         <outlet property="pickAnImageFromCamera" destination="w31-ms-gJc" id="6eq-fi-J9X"/>
                     </connections>
                 </viewController>

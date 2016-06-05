@@ -35,12 +35,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
    
   
-    @IBAction func pickAnImageFromAlbum (sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         self.presentViewController(imagePicker, animated: true, completion: nil)
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-
     
     }
     
