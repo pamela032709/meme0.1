@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     
@@ -19,6 +19,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var BottonTextLabel: UILabel!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : //TODO: Fill in appropriate UIColor,
+        NSForegroundColorAttributeName : //TODO: Fill in UIColor,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName : //TODO: Fill in appropriate Float
+    ]
     
     
        override func viewDidLoad() {
