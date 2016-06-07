@@ -13,23 +13,34 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var imagePickerView: UIImageView!
     
     @IBOutlet weak var TopTextLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var BottonTextLabel: UILabel!
     
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
+    
+       override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated:true,completion:, nil ) {
+    //override func viewWillAppear(animated:true,completion:nil ) {
+        //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+    //}
+    override func viewWillAppear(animated: Bool) {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-    }
 
+        
+    }
+    
+    
     
     //retrieve images
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
            // imageViewController.image = image
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -53,12 +64,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-
-    
     }
-
     
     
     
