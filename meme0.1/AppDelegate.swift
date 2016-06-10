@@ -1,11 +1,4 @@
-//
-//  AppDelegate.swift
-//  meme0.1
-//
-//  Created by POCH on 6/1/16.
-//  Copyright © 2016 POCH. All rights reserved.
-//
-
+ 
 import UIKit
 
 @UIApplicationMain

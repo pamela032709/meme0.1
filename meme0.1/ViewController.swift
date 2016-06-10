@@ -10,28 +10,43 @@ import UIKit
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
 
-    @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var imageview: UIImageView!
     
-    @IBOutlet weak var TopTextLabel: UILabel!
+    @IBOutlet weak var topField: UITextField!
+    
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    @IBOutlet weak var BottonTextLabel: UILabel!
+    
+    @IBOutlet weak var bottomField: UITextField!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : //TODO: Fill in appropriate UIColor,
-        NSForegroundColorAttributeName : //TODO: Fill in UIColor,
+        NSStrokeColorAttributeName :UIColor.blueColor(), //TODO: Fill in appropriate UIColor,
+        NSForegroundColorAttributeName : UIColor.whiteColor(),//TODO: Fill in UIColor,
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : //TODO: Fill in appropriate Float
+        NSStrokeWidthAttributeName :-3.0 //TODO: Fill in appropriate Float
     ]
     
     
        override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        print("")
+        print("/ set the top and botton text alogment ")
+        
+        topField.defaultTextAttributes=memeTextAttributes
+        topField.textAlignment = NSTextAlignment.Center
+        
+        
+        bottomField.defaultTextAttributes=memeTextAttributes
+        bottomField.textAlignment = NSTextAlignment.Center
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+      //textfield comes in here , change the text label to a text field
     }
     
     //override func viewWillAppear(animated:true,completion:nil ) {
