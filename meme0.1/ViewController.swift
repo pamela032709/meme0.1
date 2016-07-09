@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
 
-    @IBOutlet weak var imageview: UIImageView!
+  
+    @IBOutlet weak var ImagePickerView: UIImageView!
+  
     
     @IBOutlet weak var topField: UITextField!
     
@@ -22,41 +24,51 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName :UIColor.blueColor(), //TODO: Fill in appropriate UIColor,
-        NSForegroundColorAttributeName : UIColor.whiteColor(),//TODO: Fill in UIColor,
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName :-3.0 //TODO: Fill in appropriate Float
-    ]
-    
-    
-       override func viewDidLoad() {
+   
+    override func viewDidLoad() {
         
         super.viewDidLoad()
         
         print("")
         print("/ set the top and botton text alogment ")
         
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName :UIColor.blueColor(), //TODO: Fill in appropriate UIColor,
+            NSForegroundColorAttributeName : UIColor.whiteColor(),//TODO: Fill in UIColor,
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName :-3.0 //TODO: Fill in appropriate Float
+        ]
+
         topField.defaultTextAttributes=memeTextAttributes
         topField.textAlignment = NSTextAlignment.Center
         
         
         bottomField.defaultTextAttributes=memeTextAttributes
-        bottomField.textAlignment = NSTextAlignment.Center
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-      //textfield comes in here , change the text label to a text field
+        bottomField.textAlignment = NSTextAlignment.Center}
+
+    
+@IBAction func pickAnImageFromAlbum(sender: AnyObject) {
+        let nextController  = UIImagePickerController()
+        self.presentViewController(nextController, animated: true, completion: nil)    }
+    
+    
+    //method will get pics from the camera directly
+    
+    @IBAction func pickAnImageFromCamera (sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    //override func viewWillAppear(animated:true,completion:nil ) {
-        //cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-    //}
+    
     override func viewWillAppear(animated: Bool) {
+       print("viewWillAppearnow")
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-
+            super.viewWillAppear(animated)
+            // Subscribe to keyboard notifications to allow the view to raise when necessary
         
-    }
+        }
+    
     
     
     
@@ -69,26 +81,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
  
   
-    //will retrieve the images from an album
     
-    @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-    let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
-      self.dismissViewControllerAnimated(true, completion: nil)
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-    
-    }
-    
-    
-   //method will get pics from the camera directly 
-    
-    @IBAction func pickAnImageFromCamera(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
     
     
     

@@ -18,8 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-sf-JdG">
-                                <rect key="frame" x="0.0" y="560" width="600" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-7m-Igp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vr1-bl-HbT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="e9E-4a-4er">
+                                        <barButtonItem key="leftBarButtonItem" title="share" id="xxg-a3-HcG"/>
+                                        <barButtonItem key="rightBarButtonItem" title="cancel" id="IbJ-gE-cxN"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KO1-QM-q4h">
+                                <rect key="frame" x="0.0" y="44" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G5a-ja-Z5d">
+                                <rect key="frame" x="0.0" y="526" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-sf-JdG">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="A89-Dw-ViI"/>
                                 </constraints>
@@ -41,28 +63,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-7m-Igp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vr1-bl-HbT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="e9E-4a-4er">
-                                        <barButtonItem key="leftBarButtonItem" title="share" id="xxg-a3-HcG"/>
-                                        <barButtonItem key="rightBarButtonItem" title="cancel" id="IbJ-gE-cxN"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KO1-QM-q4h">
-                                <rect key="frame" x="0.0" y="44" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G5a-ja-Z5d">
-                                <rect key="frame" x="0.0" y="530" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,12 +81,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ImagePickerView" destination="Ny8-7m-Igp" id="Fia-01-vxN"/>
                         <outlet property="bottomField" destination="G5a-ja-Z5d" id="nkP-yP-XWY"/>
                         <outlet property="cameraButton" destination="w31-ms-gJc" id="7WX-co-w5O"/>
                         <outlet property="cancelButton" destination="IbJ-gE-cxN" id="X13-V2-5O7"/>
-                        <outlet property="imagePickerView" destination="Ny8-7m-Igp" id="7DM-3D-se8"/>
-                        <outlet property="pickAnImage" destination="xpm-sf-JdG" id="kN6-3J-NHN"/>
-                        <outlet property="pickAnImageFromCamera" destination="w31-ms-gJc" id="6eq-fi-J9X"/>
                         <outlet property="shareButton" destination="xxg-a3-HcG" id="ZBo-cd-MRu"/>
                         <outlet property="topField" destination="KO1-QM-q4h" id="EDd-UC-Sxc"/>
                     </connections>
