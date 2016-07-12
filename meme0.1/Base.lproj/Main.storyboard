@@ -51,14 +51,9 @@
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="k8P-oT-PJG"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="w31-ms-gJc">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mTf-qS-ZF4">
-                                            <rect key="frame" x="62" y="7" width="178" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="cameraButton"/>
-                                        </button>
+                                    <barButtonItem title="Camera" id="2ZV-B7-NfG">
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="I78-FT-Yzp"/>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="tEx-9f-k1L"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -83,9 +78,11 @@
                     <connections>
                         <outlet property="ImagePickerView" destination="Ny8-7m-Igp" id="Fia-01-vxN"/>
                         <outlet property="bottomField" destination="G5a-ja-Z5d" id="nkP-yP-XWY"/>
-                        <outlet property="cameraButton" destination="w31-ms-gJc" id="7WX-co-w5O"/>
+                        <outlet property="cameraButton" destination="2ZV-B7-NfG" id="7xz-ce-i8m"/>
                         <outlet property="cancelButton" destination="IbJ-gE-cxN" id="X13-V2-5O7"/>
+                        <outlet property="navigationBar" destination="Vr1-bl-HbT" id="V5F-SW-E6i"/>
                         <outlet property="shareButton" destination="xxg-a3-HcG" id="ZBo-cd-MRu"/>
+                        <outlet property="toolBar" destination="xpm-sf-JdG" id="Pti-Gi-43w"/>
                         <outlet property="topField" destination="KO1-QM-q4h" id="EDd-UC-Sxc"/>
                     </connections>
                 </viewController>
