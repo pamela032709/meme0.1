@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  meme0.1
@@ -35,7 +36,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         super.viewDidLoad()
         
         print("")
-        print("/ set the top and botton text alogment ")
+        print("/ set the top and botton text aligment ")
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName :UIColor.blueColor(), //TODO: Fill in appropriate UIColor,
@@ -51,7 +52,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         bottomField.defaultTextAttributes=memeTextAttributes
         bottomField.textAlignment = NSTextAlignment.Center}
     
-        //shareButton.enabled = false
+        shareButton.enabled = false
     
     
     
@@ -69,9 +70,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     func subscribeToKeyboardNotification () {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotification(){
@@ -136,20 +137,20 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
    
     func save1() {
         
-        // Create the Meme object
-        var myMeme = meme(topField: topField.text!, bottomField: bottomField.text!, image: ImagePickerView.image!, memedImage: generateMemedImage())
-        // Add it to the Meme array
-        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+        let myMeme = Meme(topString:topField.text!,bottomField: bottomField.text!, image: ImagePickerView.image!, memedImage: generateMemedImage())
+        
+        
+(UIApplication.sharedApplication().delegate as! AppDelegate).memes.Append(myMeme)
     }
 
     func generateMemedImage () -> UIImage {
         
-        // Hide navigation bar & tool bar
+        // Hide and surf
         
         toolBar.hidden = true
         navigationBar.hidden = true
         
-        // Resign first responders , we don't want to capture the editing blue line if we are still in the text field when generating a Meme
+        // take of blue lines
         topField.resignFirstResponder()
         bottomField.resignFirstResponder()
         
