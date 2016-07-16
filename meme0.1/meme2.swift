@@ -16,11 +16,6 @@ struct Meme{
     var image:UIImage?
     var memedImage:UIImage?
     
-    init(bottomField:String){self.bottomField=bottomField}
-    init(topString:String){self.topTextField=topString}
-    init(image:UIImage){self.ImagePickerView=image}
-    init(memedImage:UIImage){self.memedImage=generateMemedImage}
-    
-    
+        
 
 }
