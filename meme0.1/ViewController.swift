@@ -73,13 +73,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
    
     func keyboardWillShow( notification: NSNotification){
         
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
- 
-        if self.bottomField.isFirstResponder(){
-        
-    // bottom text field is selected move keyboard
-    // your text field might be named differently
-    }
+        self.view.frame.origin.y -= getKeyboardHeight(notification) }
+    
     
     func getKeyboardHeight(notification:NSNotification)->CGFloat {
     let userinfo=notification.userInfo
