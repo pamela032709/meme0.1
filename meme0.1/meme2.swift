@@ -11,10 +11,11 @@ import Foundation
 import UIKit
 
 struct Meme{
-    var topTextField:String?
+    var topField:String?
     var bottomField:String?
     var image:UIImage?
     var memedImage:UIImage?
+    
     
         
 

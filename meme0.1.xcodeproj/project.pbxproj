@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315841391D3C5B70002448F7 /* TextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315841381D3C5B70002448F7 /* TextDelegate.swift */; };
 		31686C8C1D37D48100F8B8DF /* meme2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31686C8B1D37D48100F8B8DF /* meme2.swift */; };
 		72EB35A21CFF363C008EE329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB35A11CFF363C008EE329 /* AppDelegate.swift */; };
 		72EB35A41CFF363C008EE329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB35A31CFF363C008EE329 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		315841381D3C5B70002448F7 /* TextDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDelegate.swift; sourceTree = "<group>"; };
 		31686C8B1D37D48100F8B8DF /* meme2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meme2.swift; sourceTree = "<group>"; };
 		72EB359E1CFF363C008EE329 /* meme0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meme0.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EB35A11CFF363C008EE329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				72EB35A31CFF363C008EE329 /* ViewController.swift */,
 				31686C8B1D37D48100F8B8DF /* meme2.swift */,
 				72EB35A51CFF363C008EE329 /* Main.storyboard */,
+				315841381D3C5B70002448F7 /* TextDelegate.swift */,
 				72EB35A81CFF363C008EE329 /* Assets.xcassets */,
 				72EB35AA1CFF363C008EE329 /* LaunchScreen.storyboard */,
 				72EB35AD1CFF363C008EE329 /* Info.plist */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72EB35A41CFF363C008EE329 /* ViewController.swift in Sources */,
+				315841391D3C5B70002448F7 /* TextDelegate.swift in Sources */,
 				31686C8C1D37D48100F8B8DF /* meme2.swift in Sources */,
 				72EB35A21CFF363C008EE329 /* AppDelegate.swift in Sources */,
 			);
